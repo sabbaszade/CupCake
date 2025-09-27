@@ -1,2 +1,2 @@
-# CupCake Project
+# CupCake Project - RedStack Team
 
