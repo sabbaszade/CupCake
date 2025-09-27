@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/card"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginVertical="@dimen/margin_def"
+    android:layout_marginEnd="@dimen/margin_def"
+    android:background="@color/white"
+    android:layoutDirection="rtl"
+    app:cardCornerRadius="@dimen/radius_def"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/padding_def_1.5x">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/title_related"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:justificationMode="inter_word"
+            android:maxLines="2"
+            android:minLines="2"
+            android:text="@string/title_sample"
+            android:textColor="@color/black36"
+            android:textSize="@dimen/textSize_14"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/profile_related"
+            android:layout_width="38dp"
+            android:layout_height="38dp"
+            android:layout_marginTop="@dimen/margin_def_0.5x"
+            android:scaleType="centerCrop"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/title_related"
+            android:src="@drawable/profile2" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/writer_related"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_def"
+            android:layout_marginBottom="1dp"
+            android:text="@string/name_user"
+            android:textColor="@color/black36"
+            android:textSize="@dimen/textSize_12"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@+id/profile_related"
+            app:layout_constraintTop_toTopOf="@id/profile_related" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/date_related"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_def"
+            android:text="@string/last_seen"
+            android:textColor="@color/gray"
+            android:textSize="@dimen/textSize_10"
+            app:layout_constraintStart_toEndOf="@id/profile_related"
+            app:layout_constraintTop_toBottomOf="@id/writer_related" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/bookmark_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="5dp"
+            android:src="@drawable/ic_bookmark_2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/writer_related" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</com.google.android.material.card.MaterialCardView>

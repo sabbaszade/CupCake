@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cardView"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="@dimen/margin_def"
+    android:layout_marginTop="@dimen/margin_def_1.5x"
+    android:background="@color/white"
+    android:layoutDirection="rtl"
+    app:cardCornerRadius="@dimen/radius_def"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/padding_def_1.5x">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/image_comment"
+            android:layout_width="38dp"
+            android:layout_height="38dp"
+            android:scaleType="centerCrop"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:src="@drawable/profile" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/name_comment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_def"
+            android:layout_marginBottom="1dp"
+            android:text="@string/sample_name"
+            android:textColor="@color/black36"
+            android:textSize="@dimen/textSize_12"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@id/image_comment"
+            app:layout_constraintStart_toEndOf="@id/image_comment"
+            app:layout_constraintTop_toTopOf="@id/image_comment" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/text_comment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_def_1.5x"
+            android:justificationMode="inter_word"
+            android:text="@string/sample_comment"
+            android:textColor="@color/black36"
+            android:textSize="@dimen/textSize_16"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/image_comment" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</com.google.android.material.card.MaterialCardView>

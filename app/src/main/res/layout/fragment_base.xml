@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".frg.BaseFragment">
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layoutDirection="rtl">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <com.google.android.material.appbar.AppBarLayout
+                android:id="@+id/appbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <com.google.android.material.appbar.MaterialToolbar
+                    android:id="@+id/toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    android:background="@color/purple"
+                    app:layout_scrollFlags="scroll|enterAlways">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/img_write"
+                        android:layout_width="25dp"
+                        android:layout_height="30dp"
+                        android:layout_gravity="start"
+                        android:src="@drawable/ic_write" />
+
+                    <TextView
+                        android:id="@+id/toolbar_title"
+                        style="@style/title_appbar_tv_style"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="@string/title_home_page"
+                        android:textColor="@color/white" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/user_profile"
+                        android:layout_width="25dp"
+                        android:layout_height="30dp"
+                        android:layout_gravity="end"
+                        android:layout_marginEnd="15dp"
+                        android:src="@drawable/ic_user_top" />
+
+
+                </com.google.android.material.appbar.MaterialToolbar>
+
+                <HorizontalScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/purple">
+
+                    <com.google.android.material.tabs.TabLayout
+                        android:id="@+id/tabLayout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@color/purple"
+                        app:tabBackground="@drawable/shape_bg_tab"
+                        app:tabMaxWidth="100dp"
+                        app:tabMinWidth="80dp"
+                        app:tabRippleColor="@color/transparent"
+                        app:tabSelectedTextColor="@color/purple"
+                        app:tabTextColor="@color/white"/>
+                </HorizontalScrollView>
+
+            </com.google.android.material.appbar.AppBarLayout>
+
+
+            <androidx.viewpager.widget.ViewPager
+                android:id="@+id/viewPager"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/appbar" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>

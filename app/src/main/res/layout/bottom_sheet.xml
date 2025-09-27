@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="@dimen/padding_def">
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/editArticle_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/padding_def_2x"
+        android:textSize="@dimen/textSize_16"
+        android:text="@string/editArticle"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:backgroundTint="@color/blue_btn"
+        app:cornerRadius="@dimen/radius_def" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/deleteArticle_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/padding_def_2x"
+        android:textSize="@dimen/textSize_16"
+        android:text="@string/deleteArticle"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:backgroundTint="@color/red_btn"
+        app:cornerRadius="@dimen/radius_def" />
+
+</LinearLayout>

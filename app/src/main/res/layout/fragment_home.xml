@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layoutDirection="rtl">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/bg_f3"
+            android:paddingBottom="16dp"
+            tools:context=".frg.HomeFragment">
+
+            <SearchView
+                android:id="@+id/search"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_margin="@dimen/margin_def"
+                android:background="@drawable/shape_bg_edt"
+                android:focusable="true"
+                app:closeIcon="@drawable/ic_search_close_24"
+                app:layout_constraintTop_toTopOf="parent"
+                app:searchIcon="@drawable/ic_search_icon"
+                app:queryBackground="@android:color/transparent"
+                android:queryBackground="@android:color/transparent"
+                android:queryHint="@string/search_hint"
+                android:iconifiedByDefault="false" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_list"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/def_rv_height"
+                android:layout_margin="@dimen/margin_def"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/search"
+                tools:listitem="@layout/layout_rv_home" />
+
+            <TextView
+                android:id="@+id/title_best"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:lineSpacingExtra="6.7sp"
+                android:text="@string/title_best"
+                android:textColor="@color/black"
+                android:textSize="12sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/rv_list" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_best_horiz"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_def"
+                android:layout_marginBottom="@dimen/margin_def"
+                app:layout_constraintStart_toStartOf="@id/title_best"
+                app:layout_constraintTop_toBottomOf="@id/title_best" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

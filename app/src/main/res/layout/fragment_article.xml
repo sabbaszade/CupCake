@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="article"
+            type="com.example.redstackapp.model.Article" />
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/bg_f3"
+        android:id="@+id/scroll_view"
+        android:fillViewport="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/margin_def"
+            android:background="@color/bg_f3"
+            android:layoutDirection="rtl">
+
+            <com.google.android.material.appbar.AppBarLayout
+                android:id="@+id/article_appbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <com.google.android.material.appbar.MaterialToolbar
+                    android:id="@+id/article_toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    android:background="@color/colorPrimary"
+                    app:layout_scrollFlags="scroll|enterAlways">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/article_rightArrow"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="start|center"
+                        android:src="@drawable/ic_arrow_right" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/article_toolbarTitle"
+                        style="@style/title_appbar_tv_style"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="@string/article_appBar" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/article_bookMark"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="end"
+                        android:layout_marginEnd="@dimen/margin_def_1.5x"
+                        android:src="@drawable/ic_bookmark" />
+
+                </com.google.android.material.appbar.MaterialToolbar>
+            </com.google.android.material.appbar.AppBarLayout>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardView_details"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_def"
+                android:background="@color/white"
+                app:cardCornerRadius="@dimen/radius_def"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/article_appbar">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/padding_def_1.5x">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/profile_image"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/profile"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/user_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin_def"
+                        android:layout_marginBottom="1dp"
+                        android:fontFamily="@font/samim_bold_fd"
+                        android:text="@string/name_user"
+                        android:textColor="@color/black36"
+                        android:textSize="@dimen/textSize_14"
+                        app:layout_constraintStart_toEndOf="@+id/profile_image"
+                        app:layout_constraintTop_toTopOf="@+id/profile_image" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/last_seen"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin_def"
+                        android:text="@string/last_seen"
+                        android:textColor="@color/gray"
+                        android:textSize="@dimen/textSize_12"
+                        app:layout_constraintBottom_toBottomOf="@+id/profile_image"
+                        app:layout_constraintStart_toEndOf="@+id/profile_image" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/fav_image"
+                        android:layout_width="26dp"
+                        android:layout_height="26dp"
+                        android:layout_marginEnd="@dimen/margin_def_1.5x"
+                        android:src="@drawable/ic_heart_1"
+                        app:layout_constraintEnd_toStartOf="@id/share_image"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/share_image"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/margin_def_0.5x"
+                        android:src="@drawable/ic_share_1"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintBottom_toBottomOf="@id/fav_image"
+                        app:layout_constraintTop_toTopOf="@id/fav_image" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_def_1.5x"
+                        android:justificationMode="inter_word"
+                        android:text="@string/sample_title2"
+                        android:textColor="@color/black36"
+                        android:textSize="@dimen/textSize_18"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/profile_image" />
+
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/desc_article"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_def_1.5x"
+                        android:justificationMode="inter_word"
+                        android:text="@string/article_desc"
+                        android:textSize="@dimen/textSize_16"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/title" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/key_words"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_def_1.5x"
+                android:text="@string/keyWords"
+                android:textColor="@color/gray"
+                android:textSize="@dimen/textSize_16"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/cardView_details" />
+
+            <LinearLayout
+                android:id="@+id/linear_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/margin_def_1.5x"
+                android:orientation="horizontal"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/key_words">
+
+                <com.google.android.material.chip.ChipGroup
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:chipSpacingHorizontal="1.5dp">
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chip2"
+                        style="@style/chipStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/sample_chip1" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chip3"
+                        style="@style/chipStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/sample_chip2" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chip4"
+                        style="@style/chipStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/sample_chip3" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chip5"
+                        style="@style/chipStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/sample_chip4" />
+                </com.google.android.material.chip.ChipGroup>
+            </LinearLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_sendComment"
+                style="@style/buttonPurple"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/margin_def_1.5x"
+                android:layout_marginTop="@dimen/margin_def_2.5x"
+                android:text="@string/button_sendComment"
+                android:textSize="@dimen/textSize_16"
+                app:icon="@drawable/ic_send"
+                app:iconGravity="textStart"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/linear_layout" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/related_article"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_def_1.5x"
+                android:text="@string/related_articles"
+                android:textColor="@color/black36"
+                android:textSize="@dimen/textSize_16"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/btn_sendComment" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/relatedArticles_recyclerView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clipToPadding="false"
+                android:paddingStart="@dimen/padding_def"
+                android:scrollbars="horizontal"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/related_article"
+                tools:ignore="RtlSymmetry"
+                tools:listitem="@layout/row_recycler_related_articles" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/comments"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_def_1.5x"
+                android:text="@string/user_comments"
+                android:textColor="@color/black36"
+                android:textSize="@dimen/textSize_16"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/relatedArticles_recyclerView" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/comments_recycler"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:scrollbars="vertical"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/comments"
+                tools:itemCount="2"
+                tools:listitem="@layout/row_recycler_comments" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</layout>

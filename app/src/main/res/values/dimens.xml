@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="title_size_defult">16sp</dimen>
+    <dimen name="margin_def_0.5x">5dp</dimen>
+    <dimen name="margin_def">10dp</dimen>
+    <dimen name="margin_def_1.5x">15dp</dimen>
+    <dimen name="margin_def_2x">20dp</dimen>
+    <dimen name="margin_def_3x">30dp</dimen>
+    <dimen name="margin_def_2.5x">25dp</dimen>
+    <dimen name="margin_def_4x">40dp</dimen>
+    <dimen name="padding_def_0.5x">5dp</dimen>
+    <dimen name="padding_def">10dp</dimen>
+    <dimen name="padding_def_1.5x">15dp</dimen>
+    <dimen name="padding_def_2x">20dp</dimen>
+    <dimen name="radius_def">10dp</dimen>
+    <dimen name="padding_def_3x">30dp</dimen>
+    <dimen name="textSize_10">10sp</dimen>
+    <dimen name="textSize_12">12sp</dimen>
+    <dimen name="textSize_14">14sp</dimen>
+    <dimen name="textSize_16">16sp</dimen>
+    <dimen name="textSize_18">18sp</dimen>
+    <dimen name="textSize_24">24sp</dimen>
+    <dimen name="chipStrokeWidth">2dp</dimen>
+    <dimen name="margin_rv_endstart_keyword">12dp</dimen>
+    <dimen name="corner_radius">10dp</dimen>
+    <dimen name="def_rv_height">600dp</dimen>
+</resources>

@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginVertical="@dimen/margin_def_0.5x"
+    android:background="@color/white"
+    android:layoutDirection="rtl"
+    app:cardCornerRadius="@dimen/radius_def"
+    app:layout_behavior="@string/bottom_sheet_behavior">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layoutDirection="rtl"
+        android:padding="@dimen/padding_def_1.5x">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/rvPost_userImage"
+            android:layout_width="38dp"
+            android:layout_height="38dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/profile"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/rvPost_userName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_def"
+            android:layout_marginBottom="1dp"
+            android:text="@string/name_user"
+            android:textSize="@dimen/textSize_12"
+            android:textColor="@color/black36"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@+id/rvPost_userImage"
+            app:layout_constraintTop_toTopOf="@+id/rvPost_userImage" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/rvPost_dateWriten"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:text="@string/sample_date"
+            android:textColor="@color/gray"
+            android:textSize="@dimen/textSize_10"
+            app:layout_constraintBottom_toBottomOf="@+id/rvPost_userImage"
+            app:layout_constraintStart_toEndOf="@+id/rvPost_userImage" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/rvPost_bookmark"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/margin_def_1.5x"
+            android:src="@drawable/ic_bookmark_2"
+            app:layout_constraintEnd_toStartOf="@id/rvPost_iconMore"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/rvPost_iconMore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/margin_def_0.5x"
+            android:src="@drawable/ic_icon"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/rvPost_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_def_1.5x"
+            android:text="@string/sample_title3"
+            android:textColor="@color/black36"
+            android:textSize="@dimen/textSize_16"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/rvPost_userImage" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/rvPost_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_def_1.5x"
+            android:text="@string/sample_desc1"
+            android:textSize="@dimen/textSize_16"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/rvPost_title" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/rvPost_iconFav"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_marginTop="@dimen/margin_def"
+            android:src="@drawable/ic_heart_1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/rvPost_description" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/rvPost_likesNum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_def_0.5x"
+            android:fontFamily="@font/samim_fd"
+            android:text="@string/sample_likes"
+            android:textColor="@color/gray"
+            android:textSize="@dimen/textSize_16"
+            app:layout_constraintBottom_toBottomOf="@id/rvPost_iconFav"
+            app:layout_constraintStart_toEndOf="@id/rvPost_iconFav"
+            app:layout_constraintTop_toTopOf="@id/rvPost_iconFav" />
+
+        <LinearLayout
+            android:id="@+id/rvPost_comment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_def"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/rvPost_description">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/rvPost_iconComment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/margin_def_0.5x"
+                android:src="@drawable/ic_comment_2" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/rvPost_commentsNum"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/samim_fd"
+                android:text="@string/sample_comment2"
+                android:textColor="@color/gray"
+                android:textSize="@dimen/textSize_16" />
+
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

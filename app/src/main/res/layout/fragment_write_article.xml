@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/bg_f3">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layoutDirection="rtl"
+            android:paddingBottom="@dimen/margin_def_2x"
+            tools:context=".frg.WriteArticleFragment">
+
+            <com.google.android.material.appbar.AppBarLayout
+                android:id="@+id/appbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <com.google.android.material.appbar.MaterialToolbar
+                    android:id="@+id/toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    android:background="@color/purple"
+                    app:layout_scrollFlags="scroll|enterAlways">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/img_arrow_right"
+                        android:layout_width="25dp"
+                        android:layout_height="30dp"
+                        android:layout_gravity="start|center"
+                        android:src="@drawable/ic_arrow_right" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/toolbar_title"
+                        style="@style/title_appbar_tv_style"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="@string/title_write_Article" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        style="@style/title_appbar_tv_style"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="end"
+                        android:layout_marginEnd="15dp"
+                        android:text="@string/title_write_Article_draft"
+                        android:textSize="@dimen/textSize_12" />
+
+
+                </com.google.android.material.appbar.MaterialToolbar>
+            </com.google.android.material.appbar.AppBarLayout>
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_def"
+                android:layout_marginTop="@dimen/margin_def"
+                android:text="@string/title_write"
+                android:textColor="@color/black36"
+                android:textSize="@dimen/title_size_defult"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/appbar" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edt_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="@dimen/margin_def_2x"
+                android:layout_marginEnd="12dp"
+                android:background="@drawable/shape_bg_edt"
+                android:minLines="1"
+                android:padding="@dimen/padding_def"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_title" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_title_articletxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_def"
+                android:layout_marginTop="@dimen/margin_def_2x"
+                android:text="@string/title_article_txt"
+                android:textColor="@color/black36"
+                android:textSize="@dimen/title_size_defult"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/edt_title" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edt_article_txt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="@dimen/margin_def_2x"
+                android:layout_marginEnd="12dp"
+                android:background="@drawable/shape_bg_edt"
+                android:gravity="start"
+                android:minLines="12"
+                android:padding="@dimen/padding_def"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_title_articletxt" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_key_word"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_def"
+                android:layout_marginTop="@dimen/margin_def_2x"
+                android:text="@string/title_keyword"
+                android:textColor="@color/black36"
+                android:textSize="@dimen/title_size_defult"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/edt_article_txt" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_key_word"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_rv_endstart_keyword"
+                android:layout_marginTop="@dimen/margin_def_2x"
+                android:layout_marginEnd="@dimen/margin_rv_endstart_keyword"
+                android:background="@drawable/shape_bg_edt"
+                android:orientation="horizontal"
+                android:paddingStart="@dimen/padding_def"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                app:layout_constraintTop_toBottomOf="@id/tv_key_word"
+                tools:listitem="@layout/row_key_word" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_enter"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_def"
+                android:padding="15dp"
+                android:text="@string/publish_article"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                app:cornerRadius="@dimen/radius_def"
+                app:layout_constraintTop_toBottomOf="@id/rv_key_word" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</layout>

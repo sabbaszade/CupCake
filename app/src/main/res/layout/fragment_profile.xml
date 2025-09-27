@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/bg_f3"
+        android:fillViewport="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layoutDirection="rtl">
+
+            <com.google.android.material.appbar.AppBarLayout
+                android:id="@+id/profile_appbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <com.google.android.material.appbar.MaterialToolbar
+                    android:id="@+id/profile_toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    android:background="@color/colorPrimary"
+                    app:layout_scrollFlags="scroll|enterAlways">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/profile_rightArrow"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="start|center"
+                        android:src="@drawable/ic_arrow_right" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/article_toolbarTitle"
+                        style="@style/title_appbar_tv_style"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="@string/profile_text" />
+
+
+                </com.google.android.material.appbar.MaterialToolbar>
+            </com.google.android.material.appbar.AppBarLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/profileInfo_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/margin_def"
+                android:layout_marginVertical="@dimen/margin_def_2x"
+                android:background="@drawable/dialog_bg"
+                android:padding="@dimen/padding_def"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/profile_appbar">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/profileFrg_image"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/profile"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/profileFrg_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_def"
+                    android:layout_marginBottom="1dp"
+                    android:text="@string/profile_name"
+                    android:textColor="@color/black36"
+                    android:textSize="@dimen/textSize_16"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@+id/profileFrg_image"
+                    app:layout_constraintTop_toTopOf="@+id/profileFrg_image" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/profileFrg_job"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_def"
+                    android:text="@string/profile_job"
+                    android:textColor="@color/gray"
+                    android:textSize="@dimen/textSize_14"
+                    app:layout_constraintBottom_toBottomOf="@+id/profileFrg_image"
+                    app:layout_constraintStart_toEndOf="@+id/profileFrg_image" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/number_posts"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_def_1.5x"
+                    android:text="@string/_128"
+                    android:textColor="@color/black36"
+                    android:textSize="@dimen/textSize_24"
+                    app:fontFamily="@font/samim_fd"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/profileFrg_image" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/number_posts_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/post_text"
+                    android:textColor="@color/gray9"
+                    android:textSize="@dimen/textSize_12"
+                    app:fontFamily="@font/samim_fd"
+                    app:layout_constraintEnd_toEndOf="@id/number_posts"
+                    app:layout_constraintStart_toStartOf="@id/number_posts"
+                    app:layout_constraintTop_toBottomOf="@id/number_posts" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/number_followers"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_def_2x"
+                    android:text="@string/_2379"
+                    android:textColor="@color/black36"
+                    android:textSize="@dimen/textSize_24"
+                    app:fontFamily="@font/samim_fd"
+                    app:layout_constraintBottom_toBottomOf="@id/number_posts"
+                    app:layout_constraintStart_toEndOf="@id/number_posts"
+                    app:layout_constraintTop_toTopOf="@id/number_posts" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/number_followers_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/follower_text"
+                    android:textColor="@color/gray9"
+                    android:textSize="@dimen/textSize_12"
+                    app:fontFamily="@font/samim_fd"
+                    app:layout_constraintEnd_toEndOf="@id/number_followers"
+                    app:layout_constraintStart_toStartOf="@id/number_followers"
+                    app:layout_constraintTop_toBottomOf="@id/number_followers" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_follow"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/padding_def_1.5x"
+                    android:text="@string/btn_follow"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/textSize_16"
+                    app:backgroundTint="@color/blue_btn"
+                    app:cornerRadius="@dimen/radius_def"
+                    app:layout_constraintBottom_toBottomOf="@id/number_followers_text"
+                    app:layout_constraintDimensionRatio="2"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/number_followers" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <com.google.android.material.chip.ChipGroup
+                android:id="@+id/profleFrg_chipGroup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_def"
+                app:chipSpacingHorizontal="10dp"
+                app:layout_constraintRight_toRightOf="@id/profileInfo_layout"
+                app:layout_constraintTop_toBottomOf="@id/profileInfo_layout"
+                app:singleSelection="true">
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipPosts"
+                    style="@style/Widget.MaterialComponents.Chip.Choice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/posts_text"
+                    android:textAppearance="@style/chipText2"
+                    android:textColor="@color/purple_813"
+                    android:textSize="@dimen/textSize_14"
+                    android:textStyle="bold"
+                    app:chipBackgroundColor="@color/white" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipFav"
+                    style="@style/Widget.MaterialComponents.Chip.Choice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/favorite_text"
+                    android:textAppearance="@style/chipText2"
+                    android:textColor="@color/black36"
+                    android:textSize="@dimen/textSize_14"
+                    android:textStyle="bold"
+                    app:chipBackgroundColor="@color/bg_f3" />
+
+            </com.google.android.material.chip.ChipGroup>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/posts_recyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/margin_def"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/profleFrg_chipGroup"
+                tools:listitem="@layout/row_recycler_posts" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+</layout>
